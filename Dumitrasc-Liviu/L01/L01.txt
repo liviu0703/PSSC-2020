@@ -1,0 +1,7 @@
+Stackoverflow este un site de tip forum, in care utilizatorii pot pune intrebari, pot raspunde la acestea sau pot vota anumite raspunsuri/intrebari pentru a urca in topul raspunsurilor si a fi mai vizibile, ele fiind considerate cele mai bune solutii.
+
+In cadrul acestuia, marea majoritate a intrebarilor sunt din domeniul IT, mai precis din domeniul programarii si al dezvoltarii de software.
+
+Utilizatorii se pot inregistra pe site si pot aduna reputatie raspunzand si ajutand alti utilizatori.
+
+In raspunsuri se pot alege diferite moduri de formatare a textului care faciliteaza, spre exemplu, inserarea unor bucati de cod, spre ajutorul si intelegerea mai buna a raspunsului din partea celui care pune intrebarea, sau a unor utilizatori care au avut aceeasi problema/intrebare si au gasit-o deja ca fiind postata si rezolvata.
