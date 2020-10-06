@@ -1,0 +1,20 @@
+Evenimente:
+	- Primire cerere inregistrare utilizator
+	- Intrebare postata
+	- Intrebarea a fost editata
+	- Raspuns postat
+	- Raspunsul a fost editat
+	- Intrebarea a fost stearsa
+	- Raspunsul a fost sters
+	- Intrebarea a fost votata
+	- Raspunsul a fost votat
+	- Notificare pentru aparitia unui nou raspuns
+	- Un raspuns a fost marcat ca fiind corect/acceptat
+	- Un nou tag a fost adaugat la filtrul de intrebari
+	
+Contexte:
+	- Contextul inregistrarilor
+	- Contextul intrebarilor
+	- Contextul raspunsurilor
+	- Contextul notificarilor
+	- Contextul voturilor
