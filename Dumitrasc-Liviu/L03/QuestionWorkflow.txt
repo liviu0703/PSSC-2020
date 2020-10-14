@@ -1,0 +1,34 @@
+Workflows
+Bounded context: "Question context"
+		Workflow: "Add question"
+				Triggered by: "Add question received"
+				Input: "Question form" (Title, Body, Tags)
+				Other inputs (dependencies)
+				Output: "New question registered"
+				Side effects: Inform user
+
+
+Workflows documentation:
+		Workflow: "Add question"
+				Input: "Question form"
+				Output: "Question registered"
+		//step 1
+				Validate question form
+				If form is invalid then
+						stop
+		//step 2
+				Send notification to confirm the question being created
+		//step 3
+				return "New question registered" event
+		
+		Substep "Validate question form"
+				Input: "Unvalidated question form"
+				Output: "Validated question form"
+				Dependencies: ML Analyzer
+			- analyze text
+			- if question analyze passed
+				return validated question form
+			- else if question analyze did not pass
+				return manual review
+			- else
+				return validation error
