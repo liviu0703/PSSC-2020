@@ -18,12 +18,15 @@ namespace ReplyWorkflow
             var wf = from createReplyResult in BoundedContextDSL.ValidateReply(100, 1, "12345678901")
                      let validReply = (CreateReplyResult.ReplyValid)createReplyResult
                      from checkLanguageResult in BoundedContextDSL.CheckLanguage(validReply.Reply.Answer)
-                     from ownerAck in BoundedContextDSL.SendAckToOwner(checkLanguageResult)
-                     from authorAck in BoundedContextDSL.SendAckToAuthor(checkLanguageResult)
+                     from ownerAck in BoundedContextDSL.SendAckToOwner((CheckLanguageResult.SafeText)checkLanguageResult, 100, 1)
+                     from authorAck in BoundedContextDSL.SendAckToAuthor((CheckLanguageResult.SafeText)checkLanguageResult, 100, 1)
                      select (validReply, checkLanguageResult, ownerAck, authorAck);
  
             var serviceProvider = new ServiceCollection()
                 .AddOperations(typeof(ValidateReplyAdapter).Assembly)
+                .AddOperations(typeof(CheckLanguageAdapter).Assembly)
+                .AddOperations(typeof(SendAckToOwnerAdapter).Assembly)
+                .AddOperations(typeof(SendAckToAuthorAdapter).Assembly)
                 .AddTransient<IInterpreterAsync>(sp => new LiveInterpreterAsync(sp))
                 .BuildServiceProvider();
 

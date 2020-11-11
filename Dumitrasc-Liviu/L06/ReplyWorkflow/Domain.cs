@@ -25,9 +25,11 @@ namespace ReplyWorkflow
         public static Port<CheckLanguageResult.ICheckLanguageResult> CheckLanguage(string text)
             => NewPort<CheckLanguageCmd, CheckLanguageResult.ICheckLanguageResult>(new CheckLanguageCmd(text));
 
-        public static Port<Unit> SendAckToOwner(object safeReply) => NewPort<Unit, Unit>(Unit.Default);
+        public static Port<SendAckToOwnerResult.ISendAckToOwnerResult> SendAckToOwner(CheckLanguageResult.SafeText ack, int questionid, int authorid) 
+            => NewPort<SendAckToOwnerCmd, SendAckToOwnerResult.ISendAckToOwnerResult>(new SendAckToOwnerCmd(ack, questionid, authorid));
 
-        public static Port<Unit> SendAckToAuthor(object problematicReply) => NewPort<Unit, Unit>(Unit.Default);
+        public static Port<SendAckToAuthorResult.ISendAckToAuthorResult> SendAckToAuthor(CheckLanguageResult.SafeText ack, int questionid, int authorid) 
+            => NewPort<SendAckToAuthorCmd, SendAckToAuthorResult.ISendAckToAuthorResult>(new SendAckToAuthorCmd(ack, questionid, authorid));
 
 
     }
