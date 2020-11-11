@@ -11,7 +11,7 @@ using ReplyWorkflow.Models;
 using ReplyWorkflow.Outputs;
 using static LanguageExt.Prelude;
 
-namespace ReplyWorkflow.Adapters
+namespace ReplyWorkflow.Adapters 
 {
     public class ValidateReplyAdapter : Adapter<CreateReplyCmd, CreateReplyResult.ICreateReplyResult, QuestionWriteContext>
     {

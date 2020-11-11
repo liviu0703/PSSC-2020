@@ -21,7 +21,7 @@ namespace ReplyWorkflow
                      from ownerAck in BoundedContextDSL.SendAckToOwner(checkLanguageResult)
                      from authorAck in BoundedContextDSL.SendAckToAuthor(checkLanguageResult)
                      select (validReply, checkLanguageResult, ownerAck, authorAck);
-
+ 
             var serviceProvider = new ServiceCollection()
                 .AddOperations(typeof(ValidateReplyAdapter).Assembly)
                 .AddTransient<IInterpreterAsync>(sp => new LiveInterpreterAsync(sp))

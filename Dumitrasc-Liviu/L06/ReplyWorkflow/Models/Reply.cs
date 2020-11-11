@@ -21,7 +21,7 @@ namespace ReplyWorkflow.Models
     public class Reply
     {
         public int QuestionId { get; }
-        public string Answer { get; }
+        public string Answer { get; } 
         public int AuthorId { get; }
 
         public Reply(int questionId, string answer, int authorId)

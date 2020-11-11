@@ -8,7 +8,7 @@ namespace Access.Primitives.IO
     {
         protected IDictionary<TEnum, Func<T>> mappings = new Dictionary<TEnum, Func<T>>();
 
-        public InputGenerator() { }
+        public InputGenerator() { } 
 
         public T Get(TEnum @case)
         {

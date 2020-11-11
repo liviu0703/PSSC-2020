@@ -12,7 +12,7 @@ namespace ReplyWorkflow.Inputs
 
         public CheckLanguageCmd(string text)
         {
-            Text = text;
+            Text = text; 
         }
     }
 }

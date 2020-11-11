@@ -15,7 +15,7 @@ namespace Access.Primitives.IO
             serviceCollection.TryAddTransient(typeof(LiveInterpreterAsync));
 
             var types = assembly.GetTypes()
-                .Where(p => typeof(IInterpreter).IsAssignableFrom(p));
+                .Where(p => typeof(IInterpreter).IsAssignableFrom(p)); 
 
             types.ToList().ForEach(p =>
             {

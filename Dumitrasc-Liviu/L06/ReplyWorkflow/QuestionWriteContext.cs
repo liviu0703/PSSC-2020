@@ -13,6 +13,6 @@ namespace ReplyWorkflow
         {
             AuthorIds = authorIds;
             QuestionIds = questionIds;
-        }
+        } 
     }
 }

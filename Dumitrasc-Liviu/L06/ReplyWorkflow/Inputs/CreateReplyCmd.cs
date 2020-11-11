@@ -13,7 +13,7 @@ namespace ReplyWorkflow.Inputs
         public int QuestionId { get; }
         [Required]
         [StringRange(10, 500)]
-        public string Reply { get; }
+        public string Reply { get; } 
 
         public CreateReplyCmd(int authorId, int questionId, string reply)
         {

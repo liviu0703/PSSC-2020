@@ -28,7 +28,7 @@ namespace Access.Primitives.IO
       
     public class Return<A> : Port<A>
     {
-        public readonly A Value;
+        public readonly A Value; 
         public Return(A value) =>
             Value = value;
 

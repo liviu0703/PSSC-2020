@@ -10,5 +10,5 @@ public static class PortExt
             m.Bind(a => f(a).Port());
     public static Port<C> SelectMany<A, B, C>(this Port<A> m, Func<A, Port<B>> f, Func<A, B, C> project) =>
             m.Bind(a => f(a).Bind(b => project(a, b).Port()));
-    public static Port<R> NewPort<O, R>(O op) => new Port<O, R, R>(op, Port);
+    public static Port<R> NewPort<O, R>(O op) => new Port<O, R, R>(op, Port); 
 }

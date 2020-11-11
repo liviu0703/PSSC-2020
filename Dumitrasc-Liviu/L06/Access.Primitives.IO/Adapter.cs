@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
+using System.Linq;//L
 using System.Threading.Tasks;
 using Access.Primitives.IO.Mocking;
 using LanguageExt;
@@ -11,9 +11,9 @@ namespace Access.Primitives.IO
     public abstract class Adapter<O, R> : Adapter<O, R, object> { }
 
     public abstract class Adapter<O, R, S> : IInterpreter<S>, IAdapter<O, R>
-    {
+    {//1
         public virtual Task<(R, bool)> ShouldExecute(S state) => Task.FromResult((default(R), true));
-        protected Port<O, R, A> Cast<A>(Port<A> ma) => (Port<O, R, A>)ma;
+        protected Port<O, R, A> Cast<A>(Port<A> ma) => (Port<O, R, A>)ma; 
 
 
         protected virtual async Task<R> AdapterSpecificLogic(O cmd, S state)
@@ -33,7 +33,7 @@ namespace Access.Primitives.IO
 
         public async Task<A> Interpret<A>(Port<A> ma, object state, Func<Port<A>, Task<A>> interpret)
         {
-            var op = Cast(ma).Cmd;
+            var op = Cast(ma).Cmd;//v
             var result = await AdapterSpecificLogic(op, (S)state);
             await PostConditions(op, result, (S)state);
             return await interpret(Cast(ma).Do(result));
